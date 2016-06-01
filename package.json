@@ -15,10 +15,6 @@
   ],
   "author": "Quest <quest@lysator.liu.se>",
   "license": "LGPL-3.0",
-  "scripts": {
-    "preversion": "node ./hg-version.js",
-    "postversion": "node ./hg-version.js"
-  },
   "dependencies": {
     "bluebird": "^2.9.30",
     "hg": ">= 0.1.4"
