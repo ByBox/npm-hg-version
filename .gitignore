@@ -1,0 +1,13 @@
+node_modules/async
+node_modules/bluebird
+node_modules/coffee-script
+node_modules/colors
+node_modules/cycle
+node_modules/eyes
+node_modules/hg
+node_modules/isstream
+node_modules/lodash
+node_modules/pkginfo
+node_modules/stack-trace
+node_modules/uuid
+node_modules/winston

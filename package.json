@@ -1,0 +1,26 @@
+{
+  "name": "npm-hg-version",
+  "version": "0.9.2",
+  "description": "Tag Mercurial repository on npm version",
+  "main": "hg-version.js",
+  "repository": {
+    "type": "hg",
+    "url": "https://bitbucket.org/quest/npm-hg-version"
+  },
+  "keywords": [
+    "mercurial",
+    "hg",
+    "version",
+    "tagging"
+  ],
+  "author": "Quest <quest@lysator.liu.se>",
+  "license": "LGPL-3.0",
+  "scripts": {
+    "preversion": "node ./hg-version.js",
+    "postversion": "node ./hg-version.js"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.30",
+    "hg": ">= 0.1.4"
+  }
+}
