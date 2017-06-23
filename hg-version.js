@@ -55,6 +55,7 @@ switch (process.env.npm_lifecycle_event) {
             verify_repo_clean(status)
             verify_essential(status, 'package.json')
             verify_essential(status, 'npm-shrinkwrap.json')
+            verify_essential(status, 'package-lock.json')
             verify_tag_new(tags)
         }).catch(function(err) {
             console.error(err)
@@ -77,6 +78,9 @@ switch (process.env.npm_lifecycle_event) {
             var to_commit = ['package.json']
             if(status['npm-shrinkwrap.json']) {
                 to_commit.push('npm-shrinkwrap.json')
+            }
+            if(status['package-lock.json']) {
+                to_commit.push('package-lock.json')
             }
 
             return here.commitAsync(to_commit, options)
