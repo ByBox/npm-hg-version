@@ -1,5 +1,5 @@
 {
-  "name": "@pebblecode/npm-hg-version",
+  "name": "@bybox/npm-hg-version",
   "version": "1.0.1",
   "description": "Tag Mercurial repository on npm version",
   "main": "hg-version.js",
