@@ -41,6 +41,14 @@ function verify_package_modified(status) {
     }
 }
 
+function get_element(result) {
+    // sometimes these results return arrays, sometimes objects.
+    if( Object.prototype.toString.call( result[0] ) === '[object Array]' ) {
+      return result[0]
+    }
+    return result
+}
+
 switch (process.env.npm_lifecycle_event) {
     case 'preversion':
         Promise.all([
@@ -49,8 +57,8 @@ switch (process.env.npm_lifecycle_event) {
             here.tagsAsync()
         ]).then(function(results) {
             var parsers = results[0]
-            var status = parsers.status(results[1])
-            var tags = parsers.tags(results[2])
+            var status = parsers.status(get_element(results[1]))
+            var tags = parsers.tags(get_element(results[2]))
 
             verify_repo_clean(status)
             verify_essential(status, 'package.json')
@@ -71,7 +79,7 @@ switch (process.env.npm_lifecycle_event) {
             here.statusAsync()
         ]).then(function(results) {
             var parsers = results[0]
-            var status = parsers.status(results[1])
+            var status = parsers.status(get_element(results[1]))
 
             verify_package_modified(status)
 
